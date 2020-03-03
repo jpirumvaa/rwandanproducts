@@ -37,6 +37,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 .nav-icon {
   font-size: 1.5rem;
@@ -60,21 +61,35 @@ body {
   color: var(--mainWhite);
 }
 .nav-list{
-padding-left: -50px;
+background-color: var(--headAndFoot);
+margin-top: 200px;
+position: absolute;
+top:-160px;
+
 }
 .nav-list a{
 	text-decoration: none;
 	font-size: 18px;
 	padding: 10px;
 	margin-left: 0;
+	display: none;
 }
 .nav-list a:hover{
 	font-size: 20px;
-	color: white;
+	color: white;	
+}
+.navigation-icon:hover{
+	cursor: pointer;
+}
+.navigation-icon:hover .nav-list a {
+	display: block;
 }
 
 .nav-list a:visited{
 	color: black;
+}
+.cart-btn:hover .cart-overlay{
+	visibility: visible;
 }
 
 .hero {
@@ -230,7 +245,7 @@ padding-left: -50px;
   transition: var(--mainTransition);
   background: rgb(240, 157, 81, 0.5);
   z-index: 2;
-  display: none;
+  visibility: hidden;
 }
 .cart {
   position: fixed;
@@ -243,7 +258,7 @@ padding-left: -50px;
   background: rgb(231, 226, 221);
   padding: 1.5rem;
   transition: var(--mainTransition);
-  transform: translateX(100%);
+/*transform: translateX(100%);*/
 }
 
 .cart-btn:hover .cart-overlay{
